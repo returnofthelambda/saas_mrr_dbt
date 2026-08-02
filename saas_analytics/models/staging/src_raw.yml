@@ -1,0 +1,9 @@
+# saas_analytics/models/staging/src_raw.yml
+version: 2
+
+sources:
+  - name: raw
+    database: SAAS_ANALYTICS
+    schema: RAW
+    tables:
+      - name: subscription_events

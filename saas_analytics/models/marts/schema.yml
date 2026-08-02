@@ -1,0 +1,14 @@
+# saas_analytics/models/marts/schema.yml
+version: 2
+
+models:
+  - name: fct_mrr_monthly_waterfall
+    description: "Monthly SaaS MRR Waterfall aggregate table"
+    columns:
+      - name: mrr_month
+        tests:
+          - unique
+          - not_null
+      - name: ending_mrr
+        tests:
+          - not_null

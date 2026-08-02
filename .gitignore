@@ -1,0 +1,11 @@
+# dbt execution logs and build target
+logs/
+target/
+
+# dbt dependencies (installed via `dbt deps`)
+# not used here, but standard practice
+dbt_packages/
+
+# Environment variables & virtual environment
+.env
+.venv/
