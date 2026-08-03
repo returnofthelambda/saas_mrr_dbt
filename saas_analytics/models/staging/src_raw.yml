@@ -3,7 +3,14 @@ version: 2
 
 sources:
   - name: raw
-    database: SAAS_ANALYTICS
-    schema: RAW
+    schema: raw
+    description: "Raw transactional data ingested via Python"
     tables:
       - name: subscription_events
+        description: "Raw SaaS customer subscription change events"
+        columns:
+          - name: event_id
+            description: "Primary key for subscription events"
+            tests:
+              - unique
+              - not_null

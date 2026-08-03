@@ -9,3 +9,7 @@ dbt_packages/
 # Environment variables & virtual environment
 .env
 .venv/
+
+# Local Databases
+data/*.duckdb
+data/*parquet
