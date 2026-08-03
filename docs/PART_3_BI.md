@@ -91,18 +91,16 @@ Log into your Snowflake console. On the left side panel, navigate to Workspaces 
 
 #### Option B: Locally Hosted Streamlit (DuckDB)
 
-Ensure your virtual environment is active:
+Finally, we have a justification for installing `tmux` in the first place. Go ahead and press `ctrl+b` then `%` to create a vertical split pane. 
+
+Ensure your virtual environment is active and then run the Streamlit app:
 
 ```bash
 . .venv/bin/activate # from the main saas_mrr_dbt/ directory
-```
- And then run the Streamlit app:
-
-```bash
 streamlit run app.py
 ```
 
-This will cause Streamlit to spin up a local web server (typically at `http://localhost:8501`), displaying your interactive MRR Waterfall Dashboard. If you're using local Streamlit, it will provide you with options to deploy the app directly from the dashboard.
+This will cause Streamlit to spin up a local web server (typically at `http://localhost:8501`), displaying your interactive MRR Waterfall Dashboard. If you're using local Streamlit, it will provide you with options to deploy the app directly from the dashboard. By running this in a separate pane, we're free to use our original terminal window while still monitoring the Streamlit server activity.
 
 ![Streamlit top](images/streamlit_top.png)
 
