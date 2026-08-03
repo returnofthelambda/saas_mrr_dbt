@@ -135,7 +135,11 @@ Now that our .env is created, create a `.envrc` file with only the below code:
 dotenv
 ```
 
-Then run `direnv allow` once to approve the directory
+Then you need add the `.env` file to `direnv`'s allow list:
+
+```bash
+direnv allow
+```
 
 #### Create Your dbt profiles.yml File
 
