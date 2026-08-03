@@ -22,6 +22,6 @@ This pipeline bridges the gap between raw transactional data and board-level fin
 
 ---
 
-![Streamlit top](./images/streamlit_top.png)
+![Streamlit top](./docs/images/streamlit_top.png)
 
-![Streamlit bottom](./images/streamlit_bottom.png)
+![Streamlit bottom](./docs/images/streamlit_bottom.png)
