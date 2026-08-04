@@ -22,12 +22,14 @@ Let’s get started\!
 
 ### Getting Started
 
-#### Install tmux and direnv
+#### Install direnv and git
 
-Before we do anything else, we want to install `git`, `tmux`, and `direnv`. If you already have `tmux` (or another terminal multiplexer, or really don't want to use one), go ahead and skip that part, **but still install direnv**:
+This walkthrough assumes you have python3 installed and you know how to get to the terminal. 
+
+Before we do anything else, we want to install `git` and `direnv`:
 
 ```bash
-sudo apt update -y && sudo apt install git tmux direnv
+sudo apt update -y && sudo apt install git direnv
 ```
 
 Add the shell hook for direnv:  
@@ -42,31 +44,6 @@ Open up your terminal and create a new working directory for your code. I house 
 ```bash
 mkdir ~/code && cd ~/code && git clone git@github.com:returnofthelambda/saas_mrr_dbt.git && cd saas_mrr_dbt
 ```
-
-#### Start tmux
-
-Start a new `tmux` session named `saas_dbt`  
-```bash
-tmux new -s saas_dbt
-```
-
-#### tmux Commands Crash Course
-
-`tmux` uses keyboard commands to create panes and windows and to move between panes or windows. The default `prefix` command is `ctrl+b`. To create a new horizontal pane you run the `prefix` followed by `”` (press `ctrl` and `b` at the same time, release them and then press `”`, will be written as `prefix + “` moving forward); if you want a vertical pane it’s `prefix + %`.
-
-##### Pane creation
-
-Horizontal:
-![tmux Horizontal](images/tmux_horizontal.jpg)
-
-Vertical:
-
-![tmux Vertical](images/tmux_vertical.jpg)
-##### Moving Between Panes
-
-To move from one pane to another, press `prefix` and the arrow key direction you want to move. If you have a vertical pane setup and are on the right pane (see the cursor position in the Vertical example above) you can press `prefix + {left arrow key}` or `prefix + {right arrow key}` since there are only two panes open.
-
-You can find more in depth information on `tmux` [here](https://github.com/tmux/tmux/wiki/Getting-Started).
 
 #### Initialize Your Virtual Environment
 
@@ -161,10 +138,10 @@ saas_analytics:
       account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
       user: "{{ env_var('SNOWFLAKE_USER') }}"
       password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
-      role: ACCOUNTADMIN
-      warehouse: COMPUTE_WH
-      database: SAAS_ANALYTICS
-      schema: DEV
+      role: "{{ env_var('SNOWFLAKE_ROLE') }}"
+      warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE') }}"
+      database: "{{ env_var('SNOWFLAKE_DB') }}"
+      schema: "{{ env_var('SNOWFLAKE_SCHEMA') }}"
       threads: 4
     dev_duckdb:
       type: duckdb

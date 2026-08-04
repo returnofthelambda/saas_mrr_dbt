@@ -91,7 +91,44 @@ Log into your Snowflake console. On the left side panel, navigate to Workspaces 
 
 #### Option B: Locally Hosted Streamlit (DuckDB)
 
-Finally, we have a justification for installing `tmux` in the first place. Go ahead and press `ctrl+b` then `%` to create a vertical split pane. 
+
+#### Install tmux and start
+
+Since we're running this ourselves, we want to use a terminal multiplexer to allow us to continue to see what's going on with your webserver and allow us to continue to edit the app. If you already have `tmux` installed, skip this step.
+
+```bash
+sudo apt install tmux
+```
+
+#### Start
+
+Make sure you're in the `~/code/saas_mrr_dbt/` directory and start a new `tmux` session named `saas_dbt`  
+
+```bash
+cd ~/code/saas_mrr_dbt/ && tmux new -s saas_dbt && source .venv/bin/activate 
+```
+
+#### tmux Commands Crash Course
+
+`tmux` uses keyboard commands to create panes and windows and to move between panes or windows. The default `prefix` command is `ctrl+b`. To create a new horizontal pane you run the `prefix` followed by `”` (press `ctrl` and `b` at the same time, release them and then press `”`, will be written as `prefix + “` moving forward); if you want a vertical pane it’s `prefix + %`.
+
+##### Pane creation
+
+Horizontal:
+![tmux Horizontal](images/tmux_horizontal.jpg)
+
+Vertical:
+
+![tmux Vertical](images/tmux_vertical.jpg)
+
+##### Moving Between Panes
+
+To move from one pane to another, press `prefix` and the arrow key direction you want to move. If you have a vertical pane setup and are on the right pane (see the cursor position in the Vertical example above) you can press `prefix + {left arrow key}` or `prefix + {right arrow key}` since there are only two panes open.
+
+You can find more in depth information on `tmux` [here](https://github.com/tmux/tmux/wiki/Getting-Started).
+
+#### Start tmux and your virtual environment
+Go ahead and press `ctrl+b` then `"` to create a horizontal split pane below your main pane. 
 
 Ensure your virtual environment is active and then run the Streamlit app:
 
