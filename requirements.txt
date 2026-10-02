@@ -99,7 +99,7 @@ tomlkit==0.15.1
 typing-inspection==0.4.2
 typing_extensions==4.16.0
 tzdata==2026.3
-urllib3==2.7.0
+urllib3==2.8.0
 uvicorn==0.52.1
 watchdog==6.0.0
 websockets==16.1.1
