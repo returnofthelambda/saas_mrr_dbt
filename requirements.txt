@@ -84,7 +84,7 @@ s3transfer==0.19.2
 SecretStorage==3.5.0
 six==1.17.0
 smmap==5.0.3
-snowflake-connector-python==4.7.1
+snowflake-connector-python==4.7.3
 snowplow-tracker==1.1.0
 sortedcontainers==2.4.0
 sqlglot==30.14.0
